@@ -1,0 +1,39 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div class="container">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+
+<table class="table table-striped">
+<thead>
+  <tr>
+    <th>City Details</th>
+  </tr>
+</thead>
+<tbody>
+
+  <tr>
+  <td>Country :</td>{{cityDetails.country}}</td>
+  </tr>
+  <tr>
+      <td>City :</td>{{cityDetails.city}}</td>
+      </tr>
+      <tr>
+          <td>Humidity :</td>{{cityDetails.humidity}}</td>
+          </tr>
+      <tr>
+      <td>Pressure :</td>{{cityDetails.pressure}}</td>
+      </tr>
+      <tr>
+       <td>Sunrise :</td>{{cityDetails.sunrise}}</td>
+      </tr>
+</tbody>
+
+  </table>
+  <button class="btn btn-primary" (click)="getForecast()">Get Forecast</button>
+
+
+
+</div>
+
+
