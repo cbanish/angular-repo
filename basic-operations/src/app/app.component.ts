@@ -6,10 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.styl']
 })
 export class AppComponent {
-  title = 'contact-form';
-
-
-  log(x:string){
-    console.log(x);
-  }
+  title = 'basic-operations';
 }
