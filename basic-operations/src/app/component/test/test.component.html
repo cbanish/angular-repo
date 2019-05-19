@@ -1,3 +1,10 @@
-<p>
-  test works!
-</p>
+
+  <h2 class="text-success">Welcome to test component</h2>
+  <h2 [class]="successClass">Welcome to test1 component</h2>
+  <h2 [ngClass]="messageClasses">Welcome to test2 component</h2>
+
+  <h2 [style.color]="'blue'"  >Style binding</h2>
+  <h2 [style.color]="hasErrors ? 'red':'blue'"  >Conditional Style binding</h2>
+  <h2 [style.color]="highlightColor"  >Style binding</h2>
+  <input type="text" value="Anish">
+

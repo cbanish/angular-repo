@@ -11,5 +11,15 @@ export class TestComponent implements OnInit {
 
   ngOnInit() {
   }
+  successClass:string="text-success";
 
+  public hasErrors:boolean=true;
+  public isSuccess:boolean=false;
+  public highlightColor="orange";
+
+  public messageClasses = {
+  "text-success":!this.hasErrors,
+  "text-failure":this.hasErrors,
+  "text-special":this.isSuccess,
+  }
 }
