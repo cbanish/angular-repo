@@ -6,5 +6,38 @@
   <h2 [style.color]="'blue'"  >Style binding</h2>
   <h2 [style.color]="hasErrors ? 'red':'blue'"  >Conditional Style binding</h2>
   <h2 [style.color]="highlightColor"  >Style binding</h2>
-  <input type="text" value="Anish">
+
+  <h2>{{greeting}}</h2>
+
+  <input type="text" #myInput value="Anish">
+  <br> <br>
+  <button (click)="onClickBind(myInput.value)">Bind Input</button>
+  <br> <br>
+  <button (click)="onClick($event)">Click Me</button>
+  <br> <br>
+  <label>Two way binding</label><input type="text" [(ngModel)]="name" >
+  {{name}}
+  <br> <br>
+  <h2 *ngIf="displayCondition">Display ngIF</h2>
+  <br> <br>
+  <div [ngSwitch]="color"> <label>NG Switch</label>
+    <br> <br>
+  <div *ngSwitchCase="'red'" [style.color]="'red'" >Red color</div>
+  <div *ngSwitchCase="'blue'">Blue color</div>
+  <div *ngSwitchCase="'green'">Green color</div>
+</div>
+<br> <br>
+<label>NG For</label>
+  
+<div *ngFor="let month of months ; index as i" [style.color]="'blue'" > 
+    {{i}} {{month}}
+</div>
+<br> <br>
+<label>Receive data from Parent app component</label>
+<br> <br>
+<h2>{{"Data from "+paramName}}</h2>
+<br> <br>
+<label>Send data from Child component</label>
+<br> <br>
+<button (click)="fireEvent()" >Fire Child Event</button>
 
