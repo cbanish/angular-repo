@@ -1,0 +1,20 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<Label>Enter Username: </Label>
+<input type="text" #userName>
+<br><br>
+<Label>Add Quote: </Label>
+<input type="text" #quoteName>
+<br><br>
+<button class="" (click)="getQuotesForUser(userName.value)">Get Quote</button>
+<br><br>
+<button>Add Quote</button>
+<br><br>
+<label *ngIf="displayCondition">Stock data :</label>
+<div *ngIf="stockData; else noDataTemplate" > 
+<div *ngFor="let stock of stockData" > 
+  <label>Stock Name :</label>  {{stock.quote}}
+  
+  <label>Stock Price :</label>  {{stock.price}}
+    <br>
+</div>
+</div>

@@ -5,6 +5,12 @@
 		},
 		{
 			"path": "city-details"
+		},
+		{
+			"path": "basic-operations"
+		},
+		{
+			"path": "stock-viewer"
 		}
 	],
 	"settings": {}
