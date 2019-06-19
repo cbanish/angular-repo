@@ -1,37 +1,35 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, FormControl,Validators } from '@angular/forms';
 
 @Component({
     selector: 'app',
     templateUrl: 'app.component.html'
 })
 
-export class AppComponent implements OnInit {
-    registerForm: FormGroup;
-    submitted = false;
+export class AppComponent {
 
-    constructor(private formBuilder: FormBuilder) { }
+    registrationForm=new FormGroup({
+        username: new FormControl(''),
+        password: new FormControl(''),
+        confirmPassword: new FormControl(''),
+        address:new FormGroup({
+            city: new FormControl(''),
+            state: new FormControl(''),
+            postalcode: new FormControl('')
+    
+        })
+    });
 
-    ngOnInit() {
-        this.registerForm = this.formBuilder.group({
-            firstName: ['', Validators.required],
-            lastName: ['', Validators.required],
-            email: ['', [Validators.required, Validators.email]],
-            password: ['', [Validators.required, Validators.minLength(6)]]
-        });
-    }
-
-    // convenience getter for easy access to form fields
-    get f() { return this.registerForm.controls; }
-
-    onSubmit() {
-        this.submitted = true;
-
-        // stop here if form is invalid
-        if (this.registerForm.invalid) {
-            return;
+ loadAPI(){
+     this.registrationForm.setValue({
+        username: 'Anish',
+        password: 'admin',
+        confirmPassword: 'admin',
+        address:{
+            city: 'Chennai' ,
+            state: 'TN',
+            postalcode: 600053
         }
-
-        alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.registerForm.value))
-    }
+     });
+ }
 }
