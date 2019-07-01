@@ -8,15 +8,27 @@ import { FormBuilder, FormGroup, FormControl,Validators } from '@angular/forms';
 
 export class AppComponent {
 
-    registrationForm=new FormGroup({
-        username: new FormControl(''),
-        password: new FormControl(''),
-        confirmPassword: new FormControl(''),
-        address:new FormGroup({
-            city: new FormControl(''),
-            state: new FormControl(''),
-            postalcode: new FormControl('')
+    constructor(private fb:FormBuilder){}
+
+    // registrationForm=new FormGroup({
+    //     username: new FormControl(''),
+    //     password: new FormControl(''),
+    //     confirmPassword: new FormControl(''),
+    //     address:new FormGroup({
+    //         city: new FormControl(''),
+    //         state: new FormControl(''),
+    //         postalcode: new FormControl('')
     
+    //     })
+    // });
+    registrationForm=this.fb.group({
+        username:['Anish'],
+        password:[],
+        confirmPassword:[],
+        address:this.fb.group({
+            city: [],
+            state: [],
+            postalcode: [],
         })
     });
 

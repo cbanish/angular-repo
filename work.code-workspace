@@ -11,6 +11,9 @@
 		},
 		{
 			"path": "stock-viewer"
+		},
+		{
+			"path": "todo-app"
 		}
 	],
 	"settings": {}
